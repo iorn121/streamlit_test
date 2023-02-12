@@ -21,7 +21,7 @@ class Comment2WordCloud:
     def __init__(self, csv_path, header=None):
         self.__data = pd.read_csv(csv_path, header=None, encoding='utf-8')
 
-        self.fpath =  r'./MPLUS1-VariableFont_wght.ttf'
+        self.fpath =  r'./MPLUS1-Regular.ttf'
 
         # カウントしない文節をsetで用意
         self.non_count = set(["/", "", " ", "　", "、", "。", ".",  "せる", "まし", "まし","ます","てる","たら"])
@@ -111,4 +111,4 @@ if uploaded_file is not None:
     except Exception as e:
         
         st.text("処理に失敗しました")
-        st.text(e.message)
+        st.text(e)
