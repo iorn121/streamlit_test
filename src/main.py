@@ -109,5 +109,6 @@ if uploaded_file is not None:
                 mime="image/png"
             )
     except Exception as e:
-        print(e)
+        
         st.text("処理に失敗しました")
+        st.text(e.message)
