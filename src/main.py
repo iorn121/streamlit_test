@@ -21,8 +21,7 @@ class Comment2WordCloud:
     def __init__(self, csv_path, header=None):
         self.__data = pd.read_csv(csv_path, header=None, encoding='utf-8')
 
-        # self.fpath =  glob('/Library/Fonts//*.ttf')[0] if os.name=="posix" else glob('C:\Windows\Fonts\*.ttf')[0]
-
+        self.fpath =  glob('MPLUS1-VariableFont_wght.ttf')
 
         # カウントしない文節をsetで用意
         self.non_count = set(["/", "", " ", "　", "、", "。", ".",  "せる", "まし", "まし","ます","てる","たら"])
