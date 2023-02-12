@@ -75,7 +75,7 @@ class Comment2WordCloud:
         return self.count_sorted_text
 
     def create_wordcloud(self, width=1600, height=900):
-        self.__wordcloud = WordCloud(background_color="white",stopwords=self.non_count,width=width, height=height, regexp=r"[0-9a-zA-Zぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]+").generate(self.count_words_text)
+        self.__wordcloud = WordCloud(background_color="white", font_path="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c",stopwords=self.non_count,width=width, height=height, regexp=r"[0-9a-zA-Zぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]+").generate(self.count_words_text)
 
     def show_wordcloud(self, width=16, height=9):
         plt.figure(figsize=(width, height))
