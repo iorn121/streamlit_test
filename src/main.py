@@ -108,5 +108,6 @@ if uploaded_file is not None:
                 file_name=base_name+"_wordcloud.png",
                 mime="image/png"
             )
-    except:
+    except Exception as e:
+        print(e)
         st.text("処理に失敗しました")
