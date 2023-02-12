@@ -2,7 +2,6 @@ import os
 import streamlit as st
 import pandas as pd
 from glob import glob
-from tabulate import tabulate
 import matplotlib.pyplot as plt
 from janome.tokenizer import Tokenizer
 from wordcloud import WordCloud
@@ -20,7 +19,6 @@ st.set_page_config(
 class Comment2WordCloud:
     def __init__(self, csv_path, header=None):
         self.__data = pd.read_csv(csv_path, header=None, encoding='utf-8')
-        self.__data_string = tabulate(self.__data,tablefmt='simple', showindex=False)
 
         self.fpath =  glob('/Library/Fonts//*.ttf')[0] if os.name=="posix" else glob('C:\Windows\Fonts\*.ttf')[0]
 
