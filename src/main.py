@@ -16,13 +16,12 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
-st.text(glob('/Library/Fonts//*.ttf')[0] if os.name=="posix" else glob('C:\Windows\Fonts\*.ttf')[0])
 
 class Comment2WordCloud:
     def __init__(self, csv_path, header=None):
         self.__data = pd.read_csv(csv_path, header=None, encoding='utf-8')
 
-        self.fpath =  glob('/Library/Fonts//*.ttf')[0] if os.name=="posix" else glob('C:\Windows\Fonts\*.ttf')[0]
+        # self.fpath =  glob('/Library/Fonts//*.ttf')[0] if os.name=="posix" else glob('C:\Windows\Fonts\*.ttf')[0]
 
 
         # カウントしない文節をsetで用意
@@ -76,7 +75,7 @@ class Comment2WordCloud:
         return self.count_sorted_text
 
     def create_wordcloud(self, width=1600, height=900):
-        self.__wordcloud = WordCloud(background_color="white", font_path=self.fpath,stopwords=self.non_count,width=width, height=height, regexp=r"[0-9a-zA-Zぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]+").generate(self.count_words_text)
+        self.__wordcloud = WordCloud(background_color="white",stopwords=self.non_count,width=width, height=height, regexp=r"[0-9a-zA-Zぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]+").generate(self.count_words_text)
 
     def show_wordcloud(self, width=16, height=9):
         plt.figure(figsize=(width, height))
